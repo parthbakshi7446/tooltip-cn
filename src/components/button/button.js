@@ -5,41 +5,46 @@ import './button.css';
 const Button = ( props ) => {
     const [show, setShow] = useState(false);
     function toggleEnter(){
-        console.log("oye hoye");
         setShow(true);
     }
     function toggleLeave(){
-        console.log("oye hoye");
         setShow(false);
     }
+
     let stylebox = {};
     if(props.direction === "left"){
         stylebox={
-            left:"42%",
-            top:"45%"
+            left:"-80%",
+            top:"30%"
         }
     }
     else if(props.direction === "top"){
         stylebox={
-            left:"45%",
-            top:"42%"
+            left:"10%",
+            top:"-60%"
         }
     }
     else if(props.direction === "right"){
         stylebox={
-            left:"48%",
-            top:"45%"
+            left:"110%",
+            top:"30%"
         }
     }
     else if(props.direction === "bottom"){
         stylebox={
-            left:"45%",
-            top:"48%"
+            left:"10%",
+            top:"110%"
+        }
+    }
+    else{
+        console.log("none");
+        stylebox={
+            display:"none"
         }
     }
 
     return (
-        <div >
+        <div className="abc" >
             <button
                 onMouseEnter={toggleEnter}
                 onMouseLeave={toggleLeave}
